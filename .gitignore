@@ -1,0 +1,9 @@
+# docker-compose
+docker-compose.yml
+
+# sublime
+short-url.sublime-project
+short-url.sublime-workspace
+
+# local mysql volume
+mysql

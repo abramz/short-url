@@ -1,0 +1,29 @@
+sudo: required
+language: python
+python:
+  - "2.7"
+services:
+  - docker
+env:
+  global:
+    - PATH=$PATH:~/google-cloud-sdk/bin
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+    - CLOUDSDK_PYTHON_SITEPACKAGES=1
+cache:
+  directories:
+    - ~/google-cloud-sdk
+    - ~/docker
+install:
+  - pip install pyopenssl
+script:
+  - scripts/check-install-gcloud.sh
+  - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
+  - docker build -t $GCLOUD_IMAGE:$TRAVIS_BUILD_ID .
+  - mkdir -p ~/docker; docker save $GCLOUD_IMAGE:$TRAVIS_BUILD_ID > ~/docker/image.tar
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    repo: abramz/short-url-proxy
+    branch: master

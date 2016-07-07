@@ -1,0 +1,9 @@
+{
+  "name": "front-end",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "https://github.com/abramz/bootstrap-4.0.0-alpha.git",
+    "jquery": "~2.1.1"
+  },
+  "devDependencies": {}
+}

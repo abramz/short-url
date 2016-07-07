@@ -1,0 +1,64 @@
+{
+  "name": "short-url-back-end",
+  "version": "1.0.0",
+  "description": "Back end for my url shortener",
+  "author": {
+    "name": "Andrew Shapro",
+    "email": "me@andrewshapro.com",
+    "url": "https://github.com/abramz/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abramz/short-url.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abramz/short-url/issues"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=6.0 <7",
+    "npm": ">=3.3 <4"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "build": "babel src -d lib",
+    "lint": "eslint bin src test",
+    "test": "npm run lint && npm run test:coverage",
+    "test:once": "mocha -R spec --recursive",
+    "test:coverage": "istanbul cover _mocha -- test/ -R spec --recursive",
+    "test:watch": "mocha -R spec --watch --recursive"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.9.1",
+    "babel-runtime": "^6.9.2",
+    "big-integer": "^1.5.6",
+    "bluebird": "^3.4.1",
+    "body-parser": "^1.15.2",
+    "debug": "~2.2.0",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "mysql": "^2.9.0",
+    "node-env-file": "^0.1.7",
+    "sql": "^0.70.0",
+    "validator": "^5.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.1.0",
+    "babel-plugin-rewire": "^1.0.0-rc-4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "chai": "^3.2.0",
+    "eslint": "^3.0.0",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.10.1",
+    "mocha": "^2.2.5",
+    "proxyquire": "^1.7.1",
+    "sinon": "^1.16.1",
+    "sinon-chai": "^2.8.0"
+  }
+}

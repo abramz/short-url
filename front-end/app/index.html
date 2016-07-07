@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Shorten Urls">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Short Url</title>
+		<!-- Place favicon.ico in the root directory -->
+
+		<!-- build:css styles/vendor.css -->
+		<!-- bower:css -->
+		<!-- endbower -->
+		<!-- endbuild -->
+
+		<link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
+		<!-- build:css styles/main.css -->
+		<link rel="stylesheet" href="styles/main.css">
+		<!-- endbuild -->
+
+	</head>
+	<body>
+		<!--[if lt IE 10]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+		<header>
+			<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+				<div class="container">
+					<a class="navbar-brand" href="#">Short Url</a>
+				</div>
+			</nav>
+		</header>
+		<main class="content-container">
+			<div class="row">
+				<div class="col-sm-12 col-md-6 col-md-offset-3">
+					<form id="url-form" name="shorten-url" action="/api/" method="POST">
+					<!-- <form id="url-form" name="shorten-url" action="/api/" method="POST"> -->
+						<div class="input-group input-group-lg">
+							<input name="url" type="text" class="form-control" placeholder="Paste a URL to shorten it!" />
+							<span class="input-group-btn">
+								<button class="btn btn-secondary" type="submit">Shorten!</button>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div id="short-url-container" class="row text-center" style="display:none">
+				<div class="col-xs-12 col-md-6 col-md-offset-3">
+					<div class="card">
+						<div class="card-block">
+							<a id="short-url" href="#" class="card-link">Link</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="error-container" class="row text-center" style="display:none">
+				<div class="col-xs-12 col-md-6 col-md-offset-3">
+					<div class="alert alert-danger" role="alert">
+						<span id="error-content"></span>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<nav class="navbar navbar-fixed-bottom navbar-light navbar-footer">
+				<div class="container">
+					<ul class="nav navbar-nav nav-footer">
+						<li class="nav-item"><span class="nav-copyright">&copy; 2015 - Andrew Shapro</span></li>
+						<li class="nav-item"><a class="nav-link" href="https://github.com/abramz/short-url">GitHub</a></li>
+						<li class="nav-item"><a class="nav-link" href="https://github.com/abramz/short-url/blob/master/LICENSE">Code licensed MIT</a></li>
+					</ul>
+				</div>
+			</nav>
+		</footer>
+
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='https://www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-65962744-2', '104.197.91.65');
+			ga('send','pageview');
+		</script>
+
+		<!-- build:js scripts/vendor.js -->
+		<!-- bower:js -->
+		<script src="/bower_components/jquery/dist/jquery.js"></script>
+		<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<!-- endbower -->
+		<!-- endbuild -->
+
+		<!-- build:js scripts/main.js -->
+		<script src="scripts/ui.js"></script>
+		<script src="scripts/handlers.js"></script>
+		<script src="scripts/debounce.js"></script>
+		<script src="scripts/main.js"></script>
+		<!-- endbuild -->
+	</body>
+</html>

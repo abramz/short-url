@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Shorten Urls">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Short Url</title>
+		<link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
+		<style>
+			html,
+			body {
+			  height: 100%;
+			  min-height: 100%;
+			}
+
+			body {
+			  font-family: 'Arimo', sans-serif;
+			}
+
+			.error-container {
+			  height: 100%;
+			  min-height: 100%;
+			  position: relative;
+			}
+
+			.error {
+			  width: 700px;
+			  height: 55px;
+			  padding: 20px;
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  margin: -48px 0 0 -370px;
+			  text-align: center;
+			}
+
+			.error-header {
+			  margin: 0;
+			}
+
+			.error-text {
+			  margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="error-container">
+		  <div class="error">
+			<h1 class="error-header">Error - Unable to find the requested URL</h1>
+			<p class="error-text"></p>
+		  </div>
+		</div>
+
+		<script>
+			(function () {
+				'use strict';
+				
+				var text = document.querySelector('.error-text');
+				text.innerHTML = 'Go back to ' + '<a href="' + window.location.origin + '">' + window.location.origin+ '</a>';
+			}());
+		</script>
+	</body>
+</html>
